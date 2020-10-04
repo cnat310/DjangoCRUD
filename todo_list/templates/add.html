@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Event{% endblock %}
+
+{% block content %}
+    <form class="form-inline my-2 my-lg-0" method="POST">
+    {% csrf_token %}
+    	<table class="table table-striped table bordered">
+			<thead class="thead-dark">
+				<th scope="col"><center>Priority</center></th>
+				<th scope="col"><center>System</center></th>
+				<th scope="col"><center>Description</center></th>
+					<tr class="table-secondary">
+						<td><center>
+						<input class="form-control mr-sm-2" type="search" placeholder="{{ item.priority}}" value="{{ item.priority}}" aria-label="Search" name="priority" list="priority">
+								<datalist id="priority">
+									<option value="4 CRIT">
+									<option value="3 HIGH">
+									<option value="2 MED">
+									<option value="1 LOW">
+								</datalist>
+						</center></td>
+						<td><center>
+							<input class="form-control mr-sm-2" type="search" placeholder="{{ item.system}}" value="{{ item.system}}" aria-label="Search" name="system">
+						</center></td>
+						<td><center>
+							<input class="form-control mr-sm-2" type="search" placeholder="{{ item.task}}" value="{{ item.task}}" aria-label="Search" name="task">
+						</center></td>
+					</tr>
+				<th scope="col"><center>Type</center></th>
+				<th scope="col"><center>Owner</center></th>
+				<th scope="col"><center>Date</center></th>
+
+			
+					<tr class="table-secondary">
+						
+						<td><center>
+							<input class="form-control mr-sm-2" type="search" placeholder="{{ item.procedure}}" value="{{ item.procedure}}" aria-label="Search" name="procedure" list="procedure">
+								<datalist id="procedure">
+									<option value="TWI">
+									<option value="SOP">
+									<option value="N/A">
+								</datalist>
+						</center></td>					
+
+						<td><center>
+							<input class="form-control mr-sm-2" type="search" placeholder="{{ item.owner}}" value="{{ item.owner}}" aria-label="Search" name="owner">
+						</center></td>
+						<td><center>
+							<input class="form-control mr-sm-2" type="date" placeholder="{{ item.date}}" value="{{ item.date}}" aria-label="Search" name="date">
+						</center></td>
+					</tr>
+			</thead>
+		</table>
+		<table class="table table-striped table bordered">
+			<thead class="thead-dark">
+				<th scope="col"><center>Status</center></th>
+					<tr class="table-secondary">
+						<td><center>
+							<input class="form-control mr-sm-2" type="search" placeholder="{{ item.status}}" value="{{ item.status}}" aria-label="Search" name="status" size="130"list="status">
+								<datalist id="status">
+									<option value="Not Started">
+									<option value="In Progress">
+									<option value="Complete">
+								</datalist>
+						</center></td>
+					</tr>
+		
+			</thead>
+		</table>
+		<table class="table table-striped table bordered">
+			<thead class="thead-dark">
+				<th scope="col"><center>Notes</center></th>
+					<tr class="table-secondary">
+						<td><center>
+							<input class="form-control mr-sm-2" type="search" placeholder="{{ item.notes}}" value="{{ item.notes}}" aria-label="Search" name="notes" size="130">
+						</center></td>
+					</tr>
+		
+			</thead>
+		</table>
+      
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add Event</button>
+    </form>
+{% endblock %}
