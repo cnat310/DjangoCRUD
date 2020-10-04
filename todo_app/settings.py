@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '%fjfw75idwg1+fi_kh2t9yzbb#clzfbtb)+c4oa(r6vn7$zi%c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'versumevents.herokuapp.com',
